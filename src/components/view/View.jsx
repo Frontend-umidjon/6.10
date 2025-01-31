@@ -58,7 +58,7 @@ const View = () => {
         userData.map((task) => (
             <div className={`todo__data__card `} key={task.id}>
             {editingId === task.id ? (
-              <div className="todo__edit__form">
+              <div className="todo__data__form">
                 <input
                   type="text"
                   name="fullname"
