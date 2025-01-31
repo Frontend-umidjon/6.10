@@ -154,5 +154,97 @@ $error-color: #ff4d4d;
     width: 100%;
     max-width: 300px;
     text-align: center;
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    .todo__data__edit {
+      background: $primary-accent;
+      color: $text-color;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: $hover-accent;
+      }
+    }
+
+    .todo__data__delete {
+      background: $error-color;
+      color: $text-color;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: darken($error-color, 10%);
+      }
+    }
+  }
+
+  &__empty {
+    font-size: 1.2rem;
+    color: lighten($text-color, 10%);
+  }
+}
+.todo__data__card {
+  position: relative;
+  
+  &.editing {
+    background: lighten($card-background, 10%);
+    box-shadow: 0 0 10px $primary-accent;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+
+    h3, p {
+      opacity: 0.7;
+    }
+
+    input, textarea {
+      background: darken($input-background, 5%);
+      color: $text-color;
+      border: 1px solid $primary-accent;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+      margin-bottom: 0.5rem;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 5px $hover-accent;
+      }
+    }
+    
+    .todo__data__actions {
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .todo__data__edit {
+        background: $hover-accent;
+      }
+    }
   }
 }
